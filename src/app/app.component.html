@@ -1,0 +1,17 @@
+<!-- File: app.component.html -->
+
+<div *ngIf="!isLoading">
+  <div *ngIf="user">
+    <div>User name: {{ user?.name }}</div>
+    <div>tenantId:</div>
+    <div>{{ user?.tenantId }}</div>
+    <div>JWT:</div>
+    <div>{{ user?.accessToken }}</div>
+    <button (click)="logOut()">Log out</button>
+    <div><show-admin-portal></show-admin-portal></div>
+
+  </div>
+  <div *ngIf="!user">
+    <button (click)="loginWithRedirect()">Login with redirect</button>
+  </div>
+</div>
