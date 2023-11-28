@@ -8,6 +8,17 @@ After cloning the project, install it using
 
 ### `npm install`
 
+#### Initial configuration
+
+Open `app.module.ts` and update your environment details
+```
+contextOptions: {
+  baseUrl: 'https://[YOUR-SUB-DOMAIN].frontegg.com',
+  clientId: '[YOUR-CLIENT-ID]'
+},
+```
+
+
 In order to run the project, run
 ### `npm start`
 
