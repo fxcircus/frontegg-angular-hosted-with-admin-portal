@@ -1,17 +1,15 @@
-<!-- File: app.component.html -->
-
 <div *ngIf="!isLoading">
-  <div *ngIf="user">
-    <div>User name: {{ user?.name }}</div>
-    <div>tenantId:</div>
-    <div>{{ user?.tenantId }}</div>
-    <div>JWT:</div>
-    <div>{{ user?.accessToken }}</div>
+  <div *ngIf="user" class="user-info">
+    <div><label>User name:</label> {{ user?.name }}</div>
+    <div><label>tenantId:</label> {{ user?.tenantId }}</div>
+    <div>
+      <label>JWT:</label>
+      <textarea class="jwt-textarea" readonly>{{ user?.accessToken }}</textarea>
+    </div>
     <button (click)="logOut()">Log out</button>
-    <div><show-admin-portal></show-admin-portal></div>
-
+    <div><show-admin-portal class="user-info__admin-portal"></show-admin-portal></div>
   </div>
   <div *ngIf="!user">
-    <button (click)="loginWithRedirect()">Login with redirect</button>
+    <button class="button" (click)="loginWithRedirect()">Login with redirect</button>
   </div>
 </div>
